@@ -20,7 +20,6 @@ import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
@@ -42,14 +41,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshPinnedSectionListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.hb.examples.pinnedsection.R;
 import com.hb.views.PinnedSectionListView;
 import com.hb.views.PinnedSectionListView.PinnedSectionListAdapter;
 
-public class PinnedSectionListActivity extends Activity implements OnClickListener {
+public class SampleActivity extends Activity implements OnClickListener {
 
     static class SimpleAdapter extends ArrayAdapter<Item> implements PinnedSectionListAdapter {
 
@@ -279,11 +277,11 @@ public class PinnedSectionListActivity extends Activity implements OnClickListen
 							Item item = (Item) getListView().getAdapter()
 									.getItem(arg2);
 							if (item != null) {
-								Toast.makeText(PinnedSectionListActivity.this,
+								Toast.makeText(SampleActivity.this,
 										"Item " + arg2 + ": " + item.text,
 										Toast.LENGTH_SHORT).show();
 							} else {
-								Toast.makeText(PinnedSectionListActivity.this,
+								Toast.makeText(SampleActivity.this,
 										"Item " + arg2, Toast.LENGTH_SHORT)
 										.show();
 							}

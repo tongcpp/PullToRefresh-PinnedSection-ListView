@@ -1,0 +1,8 @@
+<com.handmark.pulltorefresh.library.PullToRefreshPinnedSectionListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:headerDividersEnabled="false"
+    android:footerDividersEnabled="false"
+    android:divider="@null"
+    />

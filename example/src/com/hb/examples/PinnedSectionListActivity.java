@@ -32,6 +32,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -268,6 +270,26 @@ public class PinnedSectionListActivity extends Activity implements OnClickListen
 //					new GetDataTask().execute();
 				}
 			});
+			mpPullToRefreshPinnedSectionListView
+					.setOnItemClickListener(new OnItemClickListener() {
+
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1,
+								int arg2, long arg3) {
+							Item item = (Item) getListView().getAdapter()
+									.getItem(arg2);
+							if (item != null) {
+								Toast.makeText(PinnedSectionListActivity.this,
+										"Item " + arg2 + ": " + item.text,
+										Toast.LENGTH_SHORT).show();
+							} else {
+								Toast.makeText(PinnedSectionListActivity.this,
+										"Item " + arg2, Toast.LENGTH_SHORT)
+										.show();
+							}
+
+						}
+					});
 		}
 		return mpPullToRefreshPinnedSectionListView.getRefreshableView();
 	}

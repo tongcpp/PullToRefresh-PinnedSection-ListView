@@ -198,16 +198,6 @@ public class SampleActivity extends Activity implements OnClickListener {
 	    outState.putBoolean("hasHeaderAndFooter", hasHeaderAndFooter);
 	}
 
-//	@Override
-//	protected void onListItemClick(ListView l, View v, int position, long id) {
-//	    Item item = (Item) getListView().getAdapter().getItem(position);
-//	    if (item != null) {
-//	        Toast.makeText(this, "Item " + position + ": " + item.text, Toast.LENGTH_SHORT).show();
-//	    } else {
-//	        Toast.makeText(this, "Item " + position, Toast.LENGTH_SHORT).show();
-//	    }
-//	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);

@@ -13,11 +13,11 @@ Eclipse Luna, Android 4.2.2
 
 ## Screenshot
 
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen0.png"  height="540" width="3600" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen0.png"  height="540" width="360" />
 
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen1.png"  height="540" width="3600" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen1.png"  height="540" width="360" />
 
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen2.png"  height="540" width="3600" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen2.png"  height="540" width="360" />
 
 ![Screenshot](https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen0.png)
 

@@ -13,10 +13,10 @@ Eclipse Luna, Android 4.2.2
 
 ## Screenshot
 
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen0.png"  height="540" width="360" />
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen1.png"  height="540" width="360" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen0.png"  height="640" width="360" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen1.png"  height="640" width="360" />
 
-<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen2.png"  height="540" width="360" />
+<img src="https://github.com/tongcpp/PullToRefresh-PinnedSection-ListView/blob/master/screen2.png"  height="640" width="360" />
 
 ## 为什么做PullToRefresh-PinnedSection-ListView
 前段时间因为项目需求，需要在Android中对ListView同时增加下拉刷新和分段头悬停的效果，受到[dkmeteor](https://github.com/dkmeteor)的启发，Merge了两个Github上的开源项目：

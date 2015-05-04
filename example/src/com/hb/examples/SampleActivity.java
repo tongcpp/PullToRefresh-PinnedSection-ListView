@@ -247,15 +247,35 @@ public class SampleActivity extends Activity implements OnClickListener {
 			mpPullToRefreshPinnedSectionListView = (PullToRefreshPinnedSectionListView) findViewById(R.id.list);
 			mpPullToRefreshPinnedSectionListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 				@Override
-				public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				public void onRefresh(final PullToRefreshBase<ListView> refreshView) {
 					String label = DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(),
 							DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
 
 					// Update the LastUpdatedLabel
 					refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 
-					// Do work to refresh the list here.
-//					new GetDataTask().execute();
+					//TODO Do work to refresh the list here.
+					new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							try {
+								Thread.sleep(1500);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							SampleActivity.this.runOnUiThread(new Runnable() {
+								
+								@Override
+								public void run() {
+									// Stop refreshing
+									refreshView.onRefreshComplete();									
+								}
+							});
+							
+						}
+					}).start();
 				}
 			});
 			mpPullToRefreshPinnedSectionListView

@@ -17,6 +17,7 @@
 package com.hb.examples;
 
 import java.util.Locale;
+import java.util.Random;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -31,6 +32,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -41,8 +43,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshPinnedSectionListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshPinnedSectionListView;
 import com.hb.examples.pinnedsection.R;
 import com.hb.views.PinnedSectionListView;
 import com.hb.views.PinnedSectionListView.PinnedSectionListAdapter;
@@ -84,15 +86,18 @@ public class SampleActivity extends Activity implements OnClickListener {
         protected void prepareSections(int sectionsNumber) { }
         protected void onSectionAdded(Item section, int sectionPosition) { }
 
-        @Override public View getView(int position, View convertView, ViewGroup parent) {
+        @SuppressWarnings("deprecation")
+		@Override public View getView(int position, View convertView, ViewGroup parent) {
             TextView view = (TextView) super.getView(position, convertView, parent);
             view.setTextColor(Color.DKGRAY);
             view.setTag("" + position);
             Item item = getItem(position);
             if (item.type == Item.SECTION) {
-                //view.setOnClickListener(PinnedSectionListActivity.this);
                 view.setBackgroundColor(parent.getResources().getColor(COLORS[item.sectionPosition % COLORS.length]));
-            }
+			} else {
+				WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+				view.setMinHeight((int) ((Math.abs(new Random().nextGaussian()) * wm.getDefaultDisplay().getHeight())*0.333));
+			}
             return view;
         }
 
@@ -170,7 +175,7 @@ public class SampleActivity extends Activity implements OnClickListener {
 	}
 
 	private boolean hasHeaderAndFooter;
-	private boolean isFastScroll;
+	private boolean isFastScroll = true;
 	private boolean addPadding;
 	private boolean isShadowVisible = true;
 

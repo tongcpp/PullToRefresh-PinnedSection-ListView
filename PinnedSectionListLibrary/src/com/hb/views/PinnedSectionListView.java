@@ -236,7 +236,7 @@ public class PinnedSectionListView extends ListView {
 
 	/** Makes sure we have an actual pinned shadow for given position. */
     void ensureShadowForPosition(int sectionPosition, int firstVisibleItem, int visibleItemCount) {
-        if (visibleItemCount < 2) { // no need for creating shadow at all, we have a single visible item
+        if (visibleItemCount < 1) { // no need for creating shadow at all, we have a single visible item
             destroyPinnedShadow();
             return;
         }
